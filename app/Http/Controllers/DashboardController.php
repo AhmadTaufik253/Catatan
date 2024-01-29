@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transaksi;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -15,8 +16,19 @@ class DashboardController extends Controller
         //
         $data['totalPemasukan'] = Transaksi::where('kategori', 'Pemasukan')->sum('nominal');
         $data['totalPengeluaran'] = Transaksi::where('kategori', 'Pengeluaran')->sum('nominal');
-
         $data['totalUang'] = $data['totalPemasukan'] - $data['totalPengeluaran'];
+
+        // Pemasukan
+        $data['dataPemasukan'] = Transaksi::where('kategori', 'Pemasukan')
+            ->select(DB::raw('MONTH(created_at) as bulan'), DB::raw('SUM(nominal) as total'))
+            ->groupBy(DB::raw('MONTH(created_at)'))
+            ->get();
+
+        // Pengeluaran
+        $data['dataPengeluaran'] = Transaksi::where('kategori', 'Pengeluaran')
+            ->select(DB::raw('MONTH(created_at) as bulan'), DB::raw('SUM(nominal) as total'))
+            ->groupBy(DB::raw('MONTH(created_at)'))
+            ->get();
         
         return view('dashboard', $data);
     }

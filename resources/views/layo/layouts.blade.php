@@ -28,6 +28,10 @@
         <!-- App Css-->
         <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
+        {{-- highchart --}}
+        <link rel="stylesheet" href="https://code.highcharts.com/css/highcharts.css">
+
+
     </head>
 
     <body data-topbar="dark">
@@ -354,6 +358,8 @@
 
         <!-- Datatable init js -->
         <script src="assets/js/pages/datatables.init.js"></script>
+
+        
 
         <!-- App js -->
         <script src="assets/js/app.js"></script>
