@@ -182,8 +182,4 @@
             var splineChart = new ApexCharts(document.querySelector("#splineAreaChart"), chartOptions);
             splineChart.render();
         </script>
-
-
-        
-
 @endsection
