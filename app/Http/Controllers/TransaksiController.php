@@ -57,16 +57,26 @@ class TransaksiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Transaksi $transaksi)
+    public function update(Request $request, $id)
     {
         //
+        Transaksi::where('id', $id)->update([
+            'nama_transaksi' => $request->nama_transaksi,
+            'nominal' => $request->nominal,
+            'kategori' => $request->kategori
+        ]);
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Transaksi $transaksi)
+    public function destroy($id)
     {
         //
+        $data = Transaksi::find($id);
+        $data->delete();
+
+        return redirect()->back();
     }
 }

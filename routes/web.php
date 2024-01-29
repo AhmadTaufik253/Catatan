@@ -16,13 +16,14 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/login', function () {
+Auth::routes();
+
+Route::redirect('/','/login'); 
+
+Route::get('/log', function () {
     return view('login');
 });
-Route::get('/register', function () {
+Route::get('/reg', function () {
     return view('register');
 });
 Route::get('/recovery-password', function () {
@@ -36,10 +37,16 @@ Route::get('/pengeluaran', function () {
     return view('pengeluaran');
 });
 
+Route::group(['middleware' => ['checklogin']], function() {
+    // Dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    
+    // Transaksi
+    Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi');
+    Route::post('/transaksi', [TransaksiController::class, 'store'])->name('transaksi-store');
+    Route::put('/transaksi/{id}', [TransaksiController::class, 'update'])->name('transaksi-update');
+    Route::delete('/transaksi/{id}', [TransaksiController::class, 'destroy'])->name('transaksi-delete');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
 
-
-// Transaksi
-Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi');
-Route::post('/transaksi', [TransaksiController::class, 'store'])->name('transaksi-store');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

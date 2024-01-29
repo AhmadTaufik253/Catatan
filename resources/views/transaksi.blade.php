@@ -40,7 +40,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th>No</th>
-                                                        <th>ransaksi</th>
+                                                        <th>Transaksi</th>
                                                         <th>Nominal</th>
                                                         <th>Kategori</th>
                                                         <th>Tanggal</th>
@@ -59,8 +59,8 @@
                                                         <td>{{ $item->kategori }}</td>
                                                         <td>{{ $item->created_at->format('d-m-Y') }}</td>
                                                         <td>
-                                                            <button class="btn btn-warning btn-sm">edit</button>
-                                                            <button class="btn btn-danger btn-sm">hapus</button>
+                                                            <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal{{ $item->id }}">edit</button>
+                                                            <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $item->id }}">hapus</button>
                                                         </td>
                                                     </tr>
                                                     @endforeach
@@ -82,7 +82,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="myModalLabel">Modal Heading</h5>
+                                <h5 class="modal-title" id="myModalLabel">Modal Tambah</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form action="{{ route('transaksi-store') }}" method="POST">
@@ -119,6 +119,77 @@
                         </div><!-- /.modal-content -->
                     </div><!-- /.modal-dialog -->
                 </div><!-- /.modal -->
+
+                <!-- edit Modal -->
+                @foreach($dataTransaksi as $item)
+                <div id="editModal{{ $item->id }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">Modal Edit</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <form action="{{ route('transaksi-update', $item->id) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <div class="modal-body">
+                                    <div class="row mb-3">
+                                        <label for="example-text-input" class="col-sm-2 col-form-label">Transaksi</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control" name="nama_transaksi" value="{{ $item->nama_transaksi }}" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="example-text-input" class="col-sm-2 col-form-label">Nominal</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control" name="nominal" value="{{ $item->nominal }}" type="number">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label class="col-sm-2 col-form-label">Kategori</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-select" name="kategori" aria-label="Default select example">
+                                                <option hidden>Pilih Kategori</option>
+                                                <option value="pemasukan" {{ $item->kategori == 'pemasukan' ? 'selected' : '' }}>Pemasukan</option>
+                                                <option value="pengeluaran" {{ $item->kategori == 'pengeluaran' ? 'selected' : '' }}>Pengeluaran</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light waves-effect" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary waves-effect waves-light">Save changes</button>
+                                </div>
+                            </form>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+                @endforeach
+
+                <!-- Delete Modal -->
+                @foreach($dataTransaksi as $item)
+                <div id="deleteModal{{ $item->id }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">Modal Hapus</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <form action="{{ route('transaksi-delete', $item->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <div class="modal-body">
+                                    <p>Apakah anda yakin ingin menghapus data ini?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light waves-effect" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary waves-effect waves-light">Save changes</button>
+                                </div>
+                            </form>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+                @endforeach
                 
 
                 {{-- Footer --}}
