@@ -31,11 +31,9 @@ class TransaksiController extends Controller
     public function store(Request $request)
     {
         //
-        // dd($request);
         Transaksi::create($request->all());
 
-        return redirect()->back();
-
+        return redirect()->route('transaksi')->with('success','Berhasil Input Transaksi');
     }
 
     /**
@@ -65,7 +63,7 @@ class TransaksiController extends Controller
             'nominal' => $request->nominal,
             'kategori' => $request->kategori
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('success','Berhasil Update Transaksi');;
     }
 
     /**
@@ -77,6 +75,6 @@ class TransaksiController extends Controller
         $data = Transaksi::find($id);
         $data->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Berhasil Delete Transaksi');;
     }
 }

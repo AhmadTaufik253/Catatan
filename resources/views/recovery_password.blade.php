@@ -41,7 +41,7 @@
     
                         <div class="p-3">
                             <form class="form-horizontal mt-3" action="#">
-
+                                @csrf
                                 <div class="alert alert-info alert-dismissible fade show" role="alert">
                                 Enter Your <strong>E-mail</strong> and instructions will be sent to you!
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -49,7 +49,7 @@
     
                                 <div class="form-group mb-3">
                                     <div class="col-xs-12">
-                                        <input class="form-control" type="email" required="" placeholder="Email">
+                                        <input class="form-control" name="email" type="email" required="" placeholder="Email">
                                     </div>
                                 </div>
     

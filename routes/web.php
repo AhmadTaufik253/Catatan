@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\RecoveryPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,22 +21,16 @@ Auth::routes();
 
 Route::redirect('/','/login'); 
 
-Route::get('/log', function () {
-    return view('login');
-});
-Route::get('/reg', function () {
-    return view('register');
-});
-Route::get('/recovery-password', function () {
-    return view('recovery_password');
-});
-
 Route::get('/pemasukan', function () {
     return view('pemasukan');
 });
 Route::get('/pengeluaran', function () {
     return view('pengeluaran');
 });
+
+Route::get('/recovery-password', [RecoveryPasswordController::class, 'index'])->name('recovery-password');
+Route::post('/recovery-password', [RecoveryPasswordController::class, 'store'])->name('recovery-password-send');
+
 
 Route::group(['middleware' => ['checklogin']], function() {
     // Dashboard

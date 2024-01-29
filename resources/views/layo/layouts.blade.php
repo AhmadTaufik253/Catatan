@@ -10,25 +10,22 @@
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
-
+        <link rel="shortcut icon" href="/assets/images/favicon.ico">
         <!-- jquery.vectormap css -->
-        <link href="assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
-
+        <link href="/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+        <!-- Sweet Alert-->
+        <link href="/assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
         <!-- DataTables -->
-        <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-
+        <link href="/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
         <!-- Responsive datatable examples -->
-        <link href="assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />  
-
+        <link href="/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />  
         <!-- Bootstrap Css -->
-        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
-        <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-
-        {{-- highchart --}}
+        <link href="/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+        <!-- highchart -->
         <link rel="stylesheet" href="https://code.highcharts.com/css/highcharts.css">
 
 
@@ -49,19 +46,19 @@
                         <div class="navbar-brand-box">
                             <a href="#" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="assets/images/logo-sm.png" alt="logo-sm" height="22">
+                                    <img src="/assets/images/logo-sm.png" alt="logo-sm" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="assets/images/logo-dark.png" alt="logo-dark" height="20">
+                                    <img src="/assets/images/logo-dark.png" alt="logo-dark" height="20">
                                 </span>
                             </a>
 
                             <a href="#" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="assets/images/logo-sm.png" alt="logo-sm-light" height="22">
+                                    <img src="/assets/images/logo-sm.png" alt="logo-sm-light" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="assets/images/logo-light.png" alt="logo-light" height="20">
+                                    <img src="/assets/images/logo-light.png" alt="logo-light" height="20">
                                 </span>
                             </a>
                         </div>
@@ -102,58 +99,6 @@
                                 </form>
                             </div>
                         </div>
-
-                        {{-- <div class="dropdown d-none d-lg-inline-block ms-1">
-                            <button type="button" class="btn header-item noti-icon waves-effect"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="ri-apps-2-line"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-                                <div class="px-lg-2">
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/github.png" alt="Github">
-                                                <span>GitHub</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
-                                                <span>Bitbucket</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/dribbble.png" alt="dribbble">
-                                                <span>Dribbble</span>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/dropbox.png" alt="dropbox">
-                                                <span>Dropbox</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/mail_chimp.png" alt="mail_chimp">
-                                                <span>Mail Chimp</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/slack.png" alt="slack">
-                                                <span>Slack</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
 
                         <div class="dropdown d-none d-lg-inline-block ms-1">
                             <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
@@ -198,7 +143,7 @@
                                     </a>
                                     <a href="" class="text-reset notification-item">
                                         <div class="d-flex">
-                                            <img src="assets/images/users/avatar-3.jpg"
+                                            <img src="/assets/images/users/avatar-3.jpg"
                                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                             <div class="flex-1">
                                                 <h6 class="mb-1">James Lemire</h6>
@@ -228,7 +173,7 @@
 
                                     <a href="" class="text-reset notification-item">
                                         <div class="d-flex">
-                                            <img src="assets/images/users/avatar-4.jpg"
+                                            <img src="/assets/images/users/avatar-4.jpg"
                                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                             <div class="flex-1">
                                                 <h6 class="mb-1">Salena Layfield</h6>
@@ -253,7 +198,7 @@
                         <div class="dropdown d-inline-block user-dropdown">
                             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
+                                <img class="rounded-circle header-profile-user" src="/assets/images/users/avatar-1.jpg"
                                     alt="Header Avatar">
                                 <span class="d-none d-xl-inline-block ms-1">{{ Auth::user()->name }}</span>
                                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
@@ -282,7 +227,7 @@
                     <!-- User details -->
                     <div class="user-profile text-center mt-3">
                         <div class="">
-                            <img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-md rounded-circle">
+                            <img src="/assets/images/users/avatar-1.jpg" alt="" class="avatar-md rounded-circle">
                         </div>
                         <div class="mt-3">
                             <h4 class="font-size-16 mb-1">{{ Auth::user()->name }}</h4>
@@ -299,7 +244,6 @@
                             <li>
                                 <a href="{{ route('dashboard') }}" class="waves-effect">
                                     <i class="ri-dashboard-line"></i>
-                                    {{-- <span class="badge rounded-pill bg-success float-end">3</span> --}}
                                     <span>Dashboard</span>
                                 </a>
                             </li>
@@ -309,19 +253,6 @@
                                     <span>Transaksi</span>
                                 </a>
                             </li>
-                            {{-- <li>
-                                <a href="/pemasukan" class="waves-effect">
-                                    <i class="ri-arrow-down-line"></i>
-                                    <span>Pemasukan</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/pengeluaran" class="waves-effect">
-                                    <i class="ri-arrow-up-line"></i>
-                                    <span>Pengeluaran</span>
-                                </a>
-                            </li> --}}
-
                         </ul>
                     </div>
                     <!-- Sidebar -->
@@ -336,27 +267,27 @@
         <!-- END layout-wrapper -->
 
         <!-- JAVASCRIPT -->
-        <script src="assets/libs/jquery/jquery.min.js"></script>
-        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
-        <script src="assets/libs/simplebar/simplebar.min.js"></script>
-        <script src="assets/libs/node-waves/waves.min.js"></script>
+        <script src="/assets/libs/jquery/jquery.min.js"></script>
+        <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="/assets/libs/node-waves/waves.min.js"></script>
 
         <!-- apexcharts -->
-        <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+        <script src="/assets/libs/apexcharts/apexcharts.min.js"></script>
 
         <!-- Required datatable js -->
-        <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+        <script src="/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
         
         <!-- Responsive examples -->
-        <script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-        <script src="assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+        <script src="/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
 
-        <!-- Datatable init js -->
-        {{-- <script src="assets/js/pages/datatables.init.js"></script> --}}
+        <!-- Sweet Alerts js -->
+        <script src="/assets/libs/sweetalert2/sweetalert2.min.js"></script>
 
-        {{-- Data Table --}}
+        <!-- Data Table -->
         <script>
             $(document).ready(function() {
                 $('.datatable').DataTable({
@@ -365,10 +296,30 @@
             })
         </script>
 
-        
-
         <!-- App js -->
-        <script src="assets/js/app.js"></script>
+        <script src="/assets/js/app.js"></script>
+
+        @if(session('success'))
+            <script>
+                Swal.fire({
+                    title: 'Success',
+                    text: '{{ session('success') }}',
+                    icon: 'success',
+                    confirmButtonColor: '#0f9cf3'
+                });
+            </script>
+        @endif
+
+        @if(session('error'))
+        <script>
+            Swal.fire({
+                title: 'Error',
+                text: '{{ session('error') }}',
+                icon: 'success',
+                confirmButtonColor: '#0f9cf3'
+            });
+        </script>
+        @endif
     </body>
 
 </html>
